@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="quality3">
+
+  <div class="quality3-header">
+    <h1>Контроль качества</h1>
+    <p>
+      Мы используем систему контроля качества, соответствующую требованиям клиентов,
+      и наша продукция всегда соответствует высоким стандартам.
+    </p>
+
+    <!-- СЧЁТЧИКИ -->
+    <div class="quality3-stats">
+
+      <div class="stat">
+        <div class="stat-num" data-target="100" data-suffix="%">0</div>
+        <div class="stat-label">контроль</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-num" data-target="24" data-suffix="/7">0</div>
+        <div class="stat-label">поддержка</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-num" data-target="2008">0</div>
+        <div class="stat-label">год основания</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="quality3-grid">
+
+    <div class="quality3-card reveal">
+      <div class="quality3-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3>Строгий контроль</h3>
+      <p>Проверка качества на каждом этапе производства.</p>
+    </div>
+
+    <div class="quality3-card reveal" style="transition-delay:.08s">
+      <div class="quality3-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3>Соответствие стандартам</h3>
+      <p>Продукция соответствует техническим регламентам и нормам отрасли.</p>
+    </div>
+
+    <div class="quality3-card reveal" style="transition-delay:.16s">
+      <div class="quality3-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z"
+                fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3>Обратная связь</h3>
+      <p>Учитываем отзывы клиентов и улучшаем процессы контроля качества.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  // Появление карточек
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('show');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Счётчики
+  function animateCount(el){
+    const target = Number(el.dataset.target);
+    const suffix = el.dataset.suffix || "";
+    const isYear = target >= 1000;
+    const duration = isYear ? 600 : 900;
+    const start = performance.now();
+
+    function tick(t){
+      const p = Math.min((t - start) / duration, 1);
+      const val = Math.floor(target * p);
+      el.textContent = val + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  const statsIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        document.querySelectorAll('.stat-num').forEach(animateCount);
+        statsIO.disconnect();
+      }
+    })
+  }, { threshold: 0.4 });
+
+  const stats = document.querySelector('.quality3-stats');
+  if(stats) statsIO.observe(stats);
+</script>
+
+{% endblock %}

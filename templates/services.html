@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="services-page">
+  <div class="container">
+
+    <h1 class="fade-in">Наши услуги</h1>
+
+    <div class="glass fade-in">
+      <div class="text-block">
+        <p>
+          Мы предлагаем комплексные решения: поставку сертифицированных
+          комплектующих, техническую поддержку и контроль качества на всех этапах.
+        </p>
+
+        <ul>
+          <li>строгий контроль качества на всех этапах</li>
+          <li>соблюдение сроков поставки</li>
+          <li>оперативная обработка заявок</li>
+          <li>прозрачные условия сотрудничества</li>
+          <li>гибкая ценовая политика</li>
+        </ul>
+
+        <p>
+          Наша цель — долгосрочное и взаимовыгодное сотрудничество.
+        </p>
+      </div>
+    </div>
+
+    <div class="services-grid fade-in">
+
+      <div class="service-card">
+        <h3>Поставка комплектующих</h3>
+        <p>Широкий ассортимент сертифицированной продукции.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Техническая поддержка</h3>
+        <p>Консультации и подбор оптимальных решений.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Контроль качества</h3>
+        <p>Проверка продукции на соответствие стандартам.</p>
+      </div>
+
+    </div>
+
+    <div class="slider fade-in">
+      <img src="{{ url_for('static', filename='images/stanok1.jpg') }}" alt="">
+      <img src="{{ url_for('static', filename='images/stanok2.jpg') }}" alt="">
+      <img src="{{ url_for('static', filename='images/stanok3.jpg') }}" alt="">
+      <img src="{{ url_for('static', filename='images/stanok4.jpg') }}" alt="">
+    </div>
+
+  </div>
+</section>
+{% endblock %}

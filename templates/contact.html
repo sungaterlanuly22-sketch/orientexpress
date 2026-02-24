@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="contact">
+  <div class="contact-wrapper">
+
+    <!-- ЛЕВАЯ КАРТОЧКА -->
+    <div class="contact-card">
+
+      <h2>Контакты</h2>
+
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        <div>
+          г. Алматы<br>
+          ул. Жарокова 285А, офис 203
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">📞</span>
+        <div>+7 778 853 69 66</div>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">✉</span>
+        <div>orienttexpresss@gmail.com</div>
+      </div>
+
+      <div class="contact-note">
+        👍 Мы всегда на связи
+      </div>
+
+    </div>
+
+    <!-- ПРАВАЯ ФОРМА -->
+    <form class="contact-form glass" method="POST" action="/contact">
+
+      <h2>Напишите нам</h2>
+
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Имя" required>
+        <input type="text" name="surname" placeholder="Фамилия">
+      </div>
+
+      <input type="email" name="email" placeholder="Эл. почта *" required>
+
+      <textarea name="message" placeholder="Сообщение" required></textarea>
+
+      <button type="submit">Отправить сообщение</button>
+
+    </form>
+
+  </div>
+</section>
+
+{% endblock %}
