@@ -1,6 +1,18 @@
-body{
+*{
+  box-sizing:border-box;
+}
+
+html, body{
   margin:0;
+  padding:0;
+  overflow-x:hidden;
   font-family:Arial, sans-serif;
+}
+
+img, video{
+  max-width:100%;
+  height:auto;
+  display:block;
 }
 
 /* HEADER */
@@ -1057,4 +1069,35 @@ html, body{
 img, video{
   max-width:100%;
   height:auto;
+}
+/* === FIX ОБРЕЗАНИЯ ТЕКСТА === */
+
+.card{
+  height:auto !important;
+  min-height:auto !important;
+}
+
+.card-content{
+  height:auto !important;
+  overflow:visible !important;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.card-content p{
+  white-space:normal !important;
+  word-break:break-word;
+}
+
+/* Картинка не ломает карточку */
+.card-img{
+  height:auto !important;
+}
+
+/* МОБИЛКА */
+@media (max-width:768px){
+  .card{
+    grid-template-columns:1fr !important;
+  }
 }
