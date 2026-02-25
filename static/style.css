@@ -1047,3 +1047,14 @@ body{
   }
 
 }
+html, body{
+  overflow-x:hidden;
+}
+*{
+  box-sizing:border-box;
+}
+
+img, video{
+  max-width:100%;
+  height:auto;
+}
