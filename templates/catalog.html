@@ -1,74 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="catalog-page">
-  <div class="container">
 
-    <h1 class="catalog-title">Каталог продукции</h1>
 
-    <p class="catalog-text">
-      Мы предлагаем ассортимент запчастей и комплектующих для пассажирских железнодорожных вагонов, предназначенных для технического обслуживания, текущего и капитального ремонта подвижного состава. Продукция соответствует действующим нормативам и техническим требованиям, обеспечивая безопасность, комфорт пассажиров и надёжную эксплуатацию вагонов.
-В каталоге представлены:
 
-элементы ходовой части пассажирских вагонов
 
-детали тормозных систем
+<div class="catalog-grid">
 
-узлы сцепных и крепёжных механизмов
-
-элементы кузова и внутреннего оснащения
-
-запасные части для инженерных и вспомогательных систем
-
-Все запчасти изготавливаются из качественных материалов с учётом повышенных требований к пассажирским перевозкам, устойчивы к износу и рассчитаны на длительный срок службы.
-    </p>
-
-    <div class="catalog-grid">
-
-      <!-- Карточка -->
-      <div class="card">
-  <div class="card-img">
-    <img src="{{ url_for('static', filename='images/prujin.jpg') }}" alt="Пружины">
+  <div class="card">
+    <div class="card-img">
+      <img src="{{ url_for('static', filename='images/prujin.jpg') }}" alt="Пружины">
+    </div>
+    <div class="card-content">
+      <h3>Цилиндрические витые пружины тележки</h3>
+      <p>Упругие элементы подвешивания, обеспечивают амортизацию и равномерное распределение нагрузки.</p>
+      <a href="#" class="btn">Подробнее</a>
+    </div>
   </div>
-  <div class="card-content">
-    <h3>Цилиндрические витые пружины тележки</h3>
-    <p>Упругие элементы подвешивания, обеспечивают амортизацию и равномерное распределение нагрузки.</p>
-    <a href="#" class="btn">Подробнее</a>
-  </div>
-</div>
 
-<div class="card">
-  <div class="card-img">
-    <img src="{{ url_for('static', filename='images/battery.jpg') }}" alt="Батареи">
+  <div class="card">
+    <div class="card-img">
+      <img src="{{ url_for('static', filename='images/battery.jpg') }}" alt="Батареи">
+    </div>
+    <div class="card-content">
+      <h3>Аккумуляторные батареи</h3>
+      <p>Источник электроэнергии для питания оборудования вагона при отсутствии генератора.</p>
+      <a href="#" class="btn">Подробнее</a>
+    </div>
   </div>
-  <div class="card-content">
-    <h3>Аккумуляторные батареи</h3>
-    <p>Источник электроэнергии для питания оборудования вагона при отсутствии генератора.</p>
-    <a href="#" class="btn">Подробнее</a>
-  </div>
-</div>
 
-<div class="card">
-  <div class="card-img">
-    <img src="{{ url_for('static', filename='images/shtucer.jpg') }}" alt="Штуцеры">
+  <div class="card">
+    <div class="card-img">
+      <img src="{{ url_for('static', filename='images/shtucer.jpg') }}" alt="Штуцеры">
+    </div>
+    <div class="card-content">
+      <h3>Соединительные штуцеры</h3>
+      <p>Элементы пневмосистем для герметичного соединения трубопроводов и узлов.</p>
+      <a href="#" class="btn">Подробнее</a>
+    </div>
   </div>
-  <div class="card-content">
-    <h3>Соединительные штуцеры</h3>
-    <p>Элементы пневмосистем для герметичного соединения трубопроводов и узлов.</p>
-    <a href="#" class="btn">Подробнее</a>
-  </div>
-</div>
 
-<div class="card">
-  <div class="card-img">
-    <img src="{{ url_for('static', filename='images/valve.jpg') }}" alt="Клапаны">
+  <div class="card">
+    <div class="card-img">
+      <img src="{{ url_for('static', filename='images/valve.jpg') }}" alt="Клапаны">
+    </div>
+    <div class="card-content">
+      <h3>Электропневматические клапаны</h3>
+      <p>Управляют потоками сжатого воздуха в пневмосистемах подвижного состава.</p>
+      <a href="#" class="btn">Подробнее</a>
+    </div>
   </div>
-  <div class="card-content">
-    <h3>Электропневматические клапаны</h3>
-    <p>Управляют потоками сжатого воздуха в пневмосистемах подвижного состава.</p>
-    <a href="#" class="btn">Подробнее</a>
-  </div>
-</div>
+
+</div> <!-- ОБЯЗАТЕЛЬНО -->
+
 </section>
 
 {% endblock %}
