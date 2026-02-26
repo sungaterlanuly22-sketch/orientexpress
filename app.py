@@ -65,5 +65,11 @@ def contact():
 
     return render_template("contact.html")
 
+@app.route("/spring")
+def spring():
+    return render_template("spring.html")
+
+
+
 if __name__ == "__main__":
     app.run()
