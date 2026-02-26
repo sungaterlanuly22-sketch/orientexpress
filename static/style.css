@@ -1141,3 +1141,8 @@ img, video{
   }
 
 }
+.catalog-page{
+  background:linear-gradient(180deg,#0b1f4b 0%, #071a3a 40%, #04142c 100%);
+  padding:120px 20px 80px;
+  min-height:100vh;
+}
