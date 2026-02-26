@@ -671,7 +671,17 @@ img, video{
   transition:0.4s;
 }
 
-.catalog-card:hover{
+.card{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  background:linear-gradient(135deg,#0b1440,#1232c7);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(0,0,0,0.6);
+  transition:0.4s;
+}
+
+.card:hover{
   transform:translateY(-10px) scale(1.01);
   box-shadow:0 35px 80px rgba(0,0,0,0.9);
 }
