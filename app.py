@@ -45,11 +45,10 @@ def contact():
         message = request.form.get("message")
 
         msg = Message(
-    subject="Новая заявка с сайта",
-    sender=app.config["MAIL_USERNAME"],
-    recipients=["orienttexpresss@gmail.com"],
-    charset="utf-8"
-)
+            subject="Новая заявка с сайта",
+            sender=app.config["MAIL_USERNAME"],
+            recipients=["orienttexpresss@gmail.com"]
+        )
 
         msg.html = f"""
         <h3>Новое сообщение сайта</h3>
@@ -58,16 +57,16 @@ def contact():
         <p><b>Сообщение:</b><br>{message}</p>
         """
 
-        mail.send(msg)
+        try:
+            mail.send(msg)
+            flash("Сообщение отправлено!")
+        except Exception as e:
+            print("ОШИБКА ПОЧТЫ:", e)
+            flash("Ошибка отправки сообщения. Почта временно не работает.")
 
-        flash("Сообщение отправлено!")
         return redirect(url_for("contact"))
 
     return render_template("contact.html")
-
-@app.route("/spring")
-def spring():
-    return render_template("spring.html")
 
 
 if __name__ == "__main__":
