@@ -8,9 +8,11 @@ app.secret_key = "secret123"
 # 🔹 НАСТРОЙКИ Gmail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_SUPPRESS_SEND'] = True
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USERNAME'] = 'orienttexpresss@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ehev dvoo iovl xrxj'
+app.config['MAIL_PASSWORD'] = 'APP_PASSWORD'
+app.config['MAIL_DEFAULT_SENDER'] = app.config['MAIL_USERNAME']
 
 mail = Mail(app)
 
