@@ -10,6 +10,13 @@
 </head>
 <body>
 
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div style="position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#111827;color:white;padding:12px 16px;border-radius:12px;z-index:9999;">
+      {{ messages[0] }}
+    </div>
+  {% endif %}
+{% endwith %}
 <header class="topbar">
   <div class="brand">
     ТОО Пассажирская вагонная<br>
