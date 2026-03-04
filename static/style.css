@@ -1070,7 +1070,9 @@ img, video{
 
 }
 html, body{
-  overflow-x:hidden;
+  margin:0;
+  padding:0;
+  background:#071a3a;
 }
 *{
   box-sizing:border-box;
@@ -1146,3 +1148,5 @@ img, video{
   padding:120px 20px 80px;
   min-height:100vh;
 }
+
+
