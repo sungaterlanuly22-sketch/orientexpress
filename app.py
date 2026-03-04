@@ -40,9 +40,9 @@ def quality():
     return render_template("quality.html")
 
 # Контакты + отправка письма
-@app.route("/contact", methods=["GET", "POST"])
+@app.route("/contact")
 def contact():
-    if request.method == "POST":
+    return render_template("contact.html")
         name = request.form.get("name")
         email = request.form.get("email")
         message = request.form.get("message")
