@@ -1217,3 +1217,11 @@ img, video{
 }
 
 }
+.contact-section{
+    padding: 20px;
+}
+
+.contact-card{
+    width: 100%;
+    box-sizing: border-box;
+}
