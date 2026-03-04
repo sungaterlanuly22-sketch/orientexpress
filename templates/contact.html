@@ -34,11 +34,20 @@
     </div>
 
     <!-- ПРАВАЯ ФОРМА -->
-  <form class="contact-form">
-  <input type="text" placeholder="Имя">
-  <input type="email" placeholder="Email">
-  <textarea placeholder="Сообщение"></textarea>
-  <button>Отправить</button>
+  <form class="contact-form"
+      action="https://formspree.io/f/mreannrj"
+      method="POST">
+
+  <input type="text" name="name" placeholder="Имя" required>
+
+  <input type="email" name="email" placeholder="Email" required>
+
+  <textarea name="message" placeholder="Сообщение" required></textarea>
+
+<input type="hidden" name="_next" value="https://orientexpress.onrender.com">
+
+<button type="submit">Отправить</button>
+
 </form>
 
   </div>
