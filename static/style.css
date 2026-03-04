@@ -1195,3 +1195,25 @@ img, video{
 .card-content p{
   color:white;
 }
+/* Адаптация для телефонов */
+@media (max-width: 768px) {
+
+.contact-card {
+    padding: 20px;
+    margin: 20px;
+}
+
+.contact-card h2 {
+    font-size: 26px;
+}
+
+.contact-card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contact-card a {
+    word-break: break-word;
+}
+
+}
